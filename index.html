@@ -70,7 +70,6 @@
     color: #58d68d;
   }
 
-  /* Skills with Icons */
   .skills-list p::before {
     content: "💻 ";
     margin-right: 6px;
@@ -119,7 +118,7 @@
       margin: 0.5rem 0 0.2rem;
     }
 
-    header p {
+    .typing-text {
       font-size: 1.3rem;
       animation: typing 3s steps(30, end);
       white-space: nowrap;
@@ -129,10 +128,32 @@
       animation-fill-mode: forwards;
     }
 
+    .static-text {
+      font-size: 1.3rem;
+      color: var(--fg);
+      display: none;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      .typing-text {
+        display: none;
+      }
+      .static-text {
+        display: block;
+      }
+    }
+
     @keyframes typing {
       from { width: 0 }
       to { width: 100% }
     }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
 
     .profile-img {
       width: 130px;
@@ -291,8 +312,9 @@
     </div>
     <img src="photo.jpg" alt="Rajath Profile" class="profile-img">
     <h1>Rajath H M</h1>
-    <p>Data Science Enthusiast | ML Explorer | CSE @ MCE</p>
-    <!-- Replace the <nav> section with this if you want to hide nav on small screens -->
+    <p class="typing-text">Data Science Enthusiast | ML Explorer | CSE @ MCE</p>
+    <p class="static-text">Data Science Enthusiast | ML Explorer<br>CSE @ MCE</p>
+
   <nav class="desktop-nav">
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
