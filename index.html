@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rajath H M | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #00d1b2;
+      --bg: #0e0e0e;
+      --fg: #f5f5f5;
+      --card: #1e1e1e;
+      --transition: 0.4s ease;
+    }
+
+    * {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--fg);
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      padding: 3rem 1rem;
+      text-align: center;
+      position: relative;
+      animation: fadeInDown var(--transition);
+    }
+
+    header h1 {
+      font-size: 2.7rem;
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    .profile-img {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 1rem auto 1.5rem;
+      border: 3px solid var(--primary);
+    }
+
+    .contact-links {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+    }
+
+    .contact-links a {
+      color: var(--fg);
+      margin-left: 12px;
+      font-size: 1.2rem;
+      transition: color var(--transition);
+    }
+
+    .contact-links a:hover {
+      color: var(--primary);
+    }
+
+    nav {
+      margin-top: 1.5rem;
+    }
+
+    nav a {
+      margin: 0 12px;
+      color: var(--fg);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color var(--transition);
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem 1.5rem;
+      animation: fadeInUp var(--transition);
+    }
+
+    h2 {
+      color: var(--primary);
+      border-left: 5px solid var(--primary);
+      padding-left: 0.6rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #58d68d;
+    }
+
+    .tags span {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--fg);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      margin-right: 8px;
+      margin-top: 10px;
+    }
+
+    a.button {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--bg);
+      padding: 10px 16px;
+      margin-top: 1rem;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #aaa;
+      background: #1c1c1c;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/rajath-h-m-82460b254" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:hmrajath86@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/Rajath-H-M" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+    <img src="photo.jpg" alt="Rajath Profile" class="profile-img">
+    <h1>Rajath H M</h1>
+    <p><i class="fas fa-code"></i> Data Science Enthusiast | ML Explorer | CSE @ MCE</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#publication">Research</a>
+      <a href="#contact">Resume</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>🧑‍💻 About Me</h2>
+    <div class="card">
+      <p>🚀 Final-year Computer Science student passionate about solving real-world challenges with ML & data-driven systems.</p>
+      <p>🔍 I enjoy turning data into decisions, exploring algorithms, and building tools with impact.</p>
+      <p>🧑‍🔬 Currently interning at PLASMID with hands-on ML modeling & analytics using Python, Pandas, and Scikit-learn.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>💼 Projects</h2>
+  
+    <div class="card">
+      <h3><i class="fas fa-shopping-cart"></i> Online Retail Recommendation System</h3>
+      <p>🔍 Built a recommendation engine on 540K+ transactions using collaborative & content-based filtering.</p>
+      <div class="tags">
+        <span>Python</span><span>ML</span><span>Retail</span>
+      </div>
+      <a class="button" href="https://github.com/Rajath-H-M/online_recommendation_system" target="_blank">GitHub</a>
+    </div>
+  
+    <div class="card">
+      <h3><i class="fas fa-x-ray"></i> Knee Osteoarthritis Detection</h3>
+      <p>🧠 Used models like Xception, ResNet on X-ray images for severity grading. Web app in progress.</p>
+      <div class="tags">
+        <span>Deep Learning</span><span>Medical Imaging</span><span>Python</span>
+      </div>
+    </div>
+  
+    <div class="card">
+      <h3><i class="fas fa-briefcase"></i> Aptitude Career App</h3>
+      <p>📚 Python + SQLite based application to prepare for campus placements through practice sets.</p>
+      <div class="tags">
+        <span>Python</span><span>Web App</span><span>SQLite</span>
+      </div>
+      <a class="button" href="https://github.com/Rajath-H-M/aptitude" target="_blank">GitHub</a>
+    </div>
+  
+    <div class="card">
+      <h3><i class="fas fa-university"></i> Bank Management System</h3>
+      <p>🏦 DSA-driven C++ console project using doubly linked lists for secure account handling.</p>
+      <div class="tags">
+        <span>C++</span><span>DSA</span>
+      </div>
+      <a class="button" href="https://github.com/Rajath-H-M/bank_management-system" target="_blank">GitHub</a>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>🛠️ Skills</h2>
+    <div class="card">
+      <p><strong>Languages:</strong> Python, C, C++, Java</p>
+      <p><strong>Tools:</strong> Scikit-learn, Pandas, NumPy, HTML, CSS, JS, MySQL</p>
+      <p><strong>Domains:</strong> Data Science, ML, DSA, Web Development</p>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>🎓 Education</h2>
+    <div class="card">
+      <p><strong>Bachelor of Engineering - Computer Science</strong><br>Malnad College of Engineering, Hassan (2021–2025)<br>CGPA: 9.20 (till 7th Semester)</p>
+      <p><strong>Pre-University (PCMB)</strong><br>Masters PU College (2019–2021)<br>Percentage: 100%</p>
+      <p><strong>SSLC</strong><br>2018–2019<br>Percentage: 98.08%</p>
+    </div>
+  </section>
+
+  <section id="publication">
+    <h2>📄 Research Publication</h2>
+    <div class="card">
+      <p><strong>Knee Osteoarthritis Detection and Severity Classification</strong></p>
+      <p>🧠 A machine learning based research paper utilizing pretrained CNN models to classify the severity of OA using X-ray datasets.</p>
+      <p>📰 Published in [Journal Name Placeholder] - <em>2025</em></p>
+      <a class="button" href="publish_rajath.pdf" target="_blank">View Publication</a>
+      <a class="button" href="publish_certificate_Rajath H M.pdf" target="_blank">View Certificate</a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>📎 Resume</h2>
+    <div class="card">
+      <p>📄 Want to learn more about my journey?</p>
+      <a class="button" href="Rajath-CSE.pdf" download><i class="fas fa-download"></i> Download Resume</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>"Driven by data, powered by purpose."</p>
+  </footer>
+</body>
+
+</html>
