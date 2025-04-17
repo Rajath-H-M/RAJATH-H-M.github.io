@@ -1,13 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rajath H M | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
+
+  .menu-toggle {
+    display: none;
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 1000;
+    color: var(--fg);
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 4rem;
+    left: 1rem;
+    background: var(--card);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    z-index: 999;
+  }
+
+  .menu a {
+    margin: 10px 0;
+    color: var(--fg);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition);
+  }
+
+  .menu a:hover {
+    color: var(--primary);
+  }
+
+  nav {
+  display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  #education .card p {
+    margin-bottom: 1.2rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--primary);
+  }
+
+  #education .card p strong {
+    color: #58d68d;
+  }
+
+  /* Skills with Icons */
+  .skills-list p::before {
+    content: "💻 ";
+    margin-right: 6px;
+  }
+
+  .skills-list p:nth-child(2)::before {
+    content: "🛠️ ";
+  }
+
+  .skills-list p:nth-child(3)::before {
+    content: "🌐 ";
+  }
+
     :root {
       --primary: #00d1b2;
       --bg: #0e0e0e;
@@ -18,6 +94,7 @@
 
     * {
       scroll-behavior: smooth;
+      box-sizing: border-box;
     }
 
     body {
@@ -29,21 +106,32 @@
     }
 
     header {
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      padding: 3rem 1rem;
+      background: radial-gradient(circle at center, #203a43, #0f2027);
+      padding: 4rem 1rem 2rem;
       text-align: center;
       position: relative;
       animation: fadeInDown var(--transition);
     }
 
     header h1 {
-      font-size: 2.7rem;
+      font-size: 3rem;
       color: var(--primary);
-      margin-bottom: 0.3rem;
+      margin: 0.5rem 0 0.2rem;
     }
 
     header p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
+      animation: typing 3s steps(30, end);
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid var(--primary);
+      width: 0;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
     }
 
     .profile-img {
@@ -51,8 +139,9 @@
       height: 130px;
       object-fit: cover;
       border-radius: 50%;
-      margin: 1rem auto 1.5rem;
       border: 3px solid var(--primary);
+      margin: 1rem auto;
+      display: block;
     }
 
     .contact-links {
@@ -73,11 +162,11 @@
     }
 
     nav {
-      margin-top: 1.5rem;
+      margin-top: 2rem;
     }
 
     nav a {
-      margin: 0 12px;
+      margin: 0 14px;
       color: var(--fg);
       text-decoration: none;
       font-weight: 600;
@@ -89,7 +178,7 @@
     }
 
     section {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
       padding: 2rem 1.5rem;
       animation: fadeInUp var(--transition);
@@ -99,22 +188,27 @@
       color: var(--primary);
       border-left: 5px solid var(--primary);
       padding-left: 0.6rem;
-      margin-bottom: 1.5rem;
-      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
     }
 
     .card {
       background: var(--card);
       padding: 1.5rem;
-      border-radius: 12px;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
       transition: transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 
     .card h3 {
@@ -125,12 +219,11 @@
     .tags span {
       display: inline-block;
       background: var(--primary);
-      color: var(--fg);
+      color: var(--bg);
       padding: 6px 12px;
       border-radius: 20px;
       font-size: 0.9rem;
-      margin-right: 8px;
-      margin-top: 10px;
+      margin: 8px 8px 0 0;
     }
 
     a.button {
@@ -140,8 +233,13 @@
       padding: 10px 16px;
       margin-top: 1rem;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 6px;
       font-weight: 600;
+      transition: background var(--transition);
+    }
+
+    a.button:hover {
+      background: #00b89c;
     }
 
     footer {
@@ -174,9 +272,18 @@
     }
   </style>
 </head>
-
 <body>
   <header>
+  <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+  <div class="menu" id="dropdownMenu">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#publication">Research</a>
+    <a href="#contact">Resume</a>
+  </div>
+
     <div class="contact-links">
       <a href="https://www.linkedin.com/in/rajath-h-m-82460b254" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="mailto:hmrajath86@gmail.com"><i class="fas fa-envelope"></i></a>
@@ -184,62 +291,62 @@
     </div>
     <img src="photo.jpg" alt="Rajath Profile" class="profile-img">
     <h1>Rajath H M</h1>
-    <p><i class="fas fa-code"></i> Data Science Enthusiast | ML Explorer | CSE @ MCE</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#education">Education</a>
-      <a href="#publication">Research</a>
-      <a href="#contact">Resume</a>
-    </nav>
+    <p>Data Science Enthusiast | ML Explorer | CSE @ MCE</p>
+    <!-- Replace the <nav> section with this if you want to hide nav on small screens -->
+  <nav class="desktop-nav">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#publication">Research</a>
+    <a href="#contact">Resume</a>
+  </nav>
+
   </header>
 
   <section id="about">
     <h2>🧑‍💻 About Me</h2>
     <div class="card">
-      <p>🚀 Final-year Computer Science student passionate about solving real-world challenges with ML & data-driven systems.</p>
+      <p>🚀 Final-year CSE student passionate about solving real-world challenges with ML & data-driven systems.</p>
       <p>🔍 I enjoy turning data into decisions, exploring algorithms, and building tools with impact.</p>
-      <p>🧑‍🔬 Currently interning at PLASMID with hands-on ML modeling & analytics using Python, Pandas, and Scikit-learn.</p>
+      <p>🧑‍🔬 Intern @ PLASMID | ML modeling & analytics using Python, Pandas, Scikit-learn.</p>
     </div>
   </section>
 
   <section id="projects">
     <h2>💼 Projects</h2>
-  
-    <div class="card">
-      <h3><i class="fas fa-shopping-cart"></i> Online Retail Recommendation System</h3>
-      <p>🔍 Built a recommendation engine on 540K+ transactions using collaborative & content-based filtering.</p>
-      <div class="tags">
-        <span>Python</span><span>ML</span><span>Retail</span>
+    <div class="grid">
+      <div class="card">
+        <h3><i class="fas fa-shopping-cart"></i> Online Retail Recommendation System</h3>
+        <p>🔍 Built a recommendation engine on 540K+ transactions using collaborative & content-based filtering.</p>
+        <div class="tags">
+          <span>Python</span><span>ML</span><span>Retail</span>
+        </div>
+        <a class="button" href="https://github.com/Rajath-H-M/online_recommendation_system" target="_blank">GitHub</a>
       </div>
-      <a class="button" href="https://github.com/Rajath-H-M/online_recommendation_system" target="_blank">GitHub</a>
-    </div>
-  
-    <div class="card">
-      <h3><i class="fas fa-x-ray"></i> Knee Osteoarthritis Detection</h3>
-      <p>🧠 Used models like Xception, ResNet on X-ray images for severity grading. Web app in progress.</p>
-      <div class="tags">
-        <span>Deep Learning</span><span>Medical Imaging</span><span>Python</span>
+      <div class="card">
+        <h3><i class="fas fa-x-ray"></i> Knee Osteoarthritis Detection</h3>
+        <p>🧠 Xception & ResNet on X-ray images for severity grading. Web app in progress.</p>
+        <div class="tags">
+          <span>Deep Learning</span><span>Medical Imaging</span><span>Python</span>
+        </div>
       </div>
-    </div>
-  
-    <div class="card">
-      <h3><i class="fas fa-briefcase"></i> Aptitude Career App</h3>
-      <p>📚 Python + SQLite based application to prepare for campus placements through practice sets.</p>
-      <div class="tags">
-        <span>Python</span><span>Web App</span><span>SQLite</span>
+      <div class="card">
+        <h3><i class="fas fa-briefcase"></i> Aptitude Career App</h3>
+        <p>📚 Python + SQLite app to prep for placements via aptitude practice sets.</p>
+        <div class="tags">
+          <span>Python</span><span>SQLite</span><span>Web App</span>
+        </div>
+        <a class="button" href="https://github.com/Rajath-H-M/aptitude" target="_blank">GitHub</a>
       </div>
-      <a class="button" href="https://github.com/Rajath-H-M/aptitude" target="_blank">GitHub</a>
-    </div>
-  
-    <div class="card">
-      <h3><i class="fas fa-university"></i> Bank Management System</h3>
-      <p>🏦 DSA-driven C++ console project using doubly linked lists for secure account handling.</p>
-      <div class="tags">
-        <span>C++</span><span>DSA</span>
+      <div class="card">
+        <h3><i class="fas fa-university"></i> Bank Management System</h3>
+        <p>🏦 DSA-driven C++ console project using doubly linked lists for secure account handling.</p>
+        <div class="tags">
+          <span>C++</span><span>DSA</span>
+        </div>
+        <a class="button" href="https://github.com/Rajath-H-M/bank_management-system" target="_blank">GitHub</a>
       </div>
-      <a class="button" href="https://github.com/Rajath-H-M/bank_management-system" target="_blank">GitHub</a>
     </div>
   </section>
 
@@ -255,7 +362,7 @@
   <section id="education">
     <h2>🎓 Education</h2>
     <div class="card">
-      <p><strong>Bachelor of Engineering - Computer Science</strong><br>Malnad College of Engineering, Hassan (2021–2025)<br>CGPA: 9.20 (till 7th Semester)</p>
+      <p><strong>B.E. - Computer Science</strong><br>Malnad College of Engineering, Hassan (2021–2025)<br>CGPA: 9.20</p>
       <p><strong>Pre-University (PCMB)</strong><br>Masters PU College (2019–2021)<br>Percentage: 100%</p>
       <p><strong>SSLC</strong><br>2018–2019<br>Percentage: 98.08%</p>
     </div>
@@ -265,10 +372,9 @@
     <h2>📄 Research Publication</h2>
     <div class="card">
       <p><strong>Knee Osteoarthritis Detection and Severity Classification</strong></p>
-      <p>🧠 A machine learning based research paper utilizing pretrained CNN models to classify the severity of OA using X-ray datasets.</p>
-      <p>📰 Published in [Journal Name Placeholder] - <em>2025</em></p>
+      <p>🧠 Research using CNNs for X-ray based OA grading. Published in [Journal Name Placeholder], 2025.</p>
       <a class="button" href="publish_rajath.pdf" target="_blank">View Publication</a>
-      <a class="button" href="publish_certificate_Rajath H M.pdf" target="_blank">View Certificate</a>
+      <a class="button" href="publish_certificate_Rajath H M.pdf" target="_blank">Certificate</a>
     </div>
   </section>
 
@@ -283,6 +389,15 @@
   <footer>
     <p>"Driven by data, powered by purpose."</p>
   </footer>
-</body>
+  
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menu = document.getElementById('dropdownMenu');
 
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('show');
+  });
+</script>
+
+</body>
 </html>
